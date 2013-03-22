@@ -9,12 +9,18 @@ define([
     el: $("#page"),
 
     render: function(){
-
-      $('.menu li').removeClass('active');
-      $('.menu li a[href="#"]').parent().addClass('active');
       this.$el.html(homeTemplate);
+    },
 
+    events: {
+      "submit form": "searchTwitter"
+    },
 
+    searchTwitter: function(ev) {
+      alert(this.$(".searchInfo").val());
+      debugger;
+      app.router.navigate("searchRequest", this.$(".searchInfo").val());
+      return false;
     }
 
   });

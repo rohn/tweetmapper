@@ -14,7 +14,7 @@ define([
 
       url : function() {
         var tweetUrl = 'http://api.twitter.com/1/statuses/user_timeline.json?callback=?'
-        + '&screen_name=' + this.tweeter.tweeter;
+        + '&screen_name=' + this.tweeter.tweeter + '&count=100';
         return tweetUrl;
       },
 

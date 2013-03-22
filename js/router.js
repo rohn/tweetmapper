@@ -40,6 +40,10 @@ define([
       var footerView = new FooterView();
     });
 
+    app_router.on('route:searchRequest', function(searchtext){
+      debugger;
+    });
+
     app_router.on('route:defaultAction', function (actions) {
 
        // We have no matching route, lets display the home page

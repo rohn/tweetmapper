@@ -11,3 +11,9 @@ the error given by the GET search/tweets API is:
 the api to get user statuses does work. here is an example:
 
 https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=rohn&count=2
+
+---
+
+api example to get user info
+
+https://api.twitter.com/1/users/show.json?screen_name=rohn&include_entities=false
