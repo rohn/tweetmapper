@@ -1,19 +1,47 @@
-<html>
-	<head>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-		<script src="./tweeter.js"></script>
-	</head>
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<body>
-		<div id = "geo-wrapper"></div>
-		<p id="msg"></p>
-		<p id="lat"></p>
-		<p id="long"></p>
+	<title>Map Tweets</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-		<ul id="tweets">
-		    <li>Loading tweets...</li>
-		</ul>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 
-	</body>
+	<link rel="stylesheet" href="css/styles.css">
+
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+	<script data-main="js/main" src="js/libs/require/require.js"></script>
+</head>
+<body>
+
+<div id="container">
+  <div id="logo">
+    <h1>Map Tweets</h1>
+  </div>
+
+<!--   <div class="menu navbar">
+    <div class="navbar-inner">
+      <ul class="nav">
+        <li><a href="#" >Home</a></li>
+        <li ><a href="#/projects" >Projects</a></li>
+        <li><a href="#/users">Contributors</a></li>
+      </ul>
+    </div>
+  </div> -->
+
+
+  <div id="page">
+    Loading....
+  </div>
+  <div id="footer"></div>
+</div>
+
+</body>
 </html>

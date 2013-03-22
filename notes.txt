@@ -1,0 +1,13 @@
+instead of using GET search/tweets (which returns an error) use the following format:
+
+http://search.twitter.com/search.json?q=tst%20media&rpp=100&include_entities=true&result_type=mixed
+
+the error given by the GET search/tweets API is:
+	{"errors":[{"message":"Bad Authentication data","code":215}]}
+	twitter documentation indicates the necessity of using OAUTH to use this API
+	https://dev.twitter.com/docs/api/1.1/get/search/tweets
+---
+
+the api to get user statuses does work. here is an example:
+
+https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=rohn&count=2
