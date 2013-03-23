@@ -3,10 +3,11 @@ define([
   'underscore',
   'backbone',
   'text!templates/home/homeTemplate.html',
-  'collections/searchTweets/SearchTweetsCollection'
+  'collections/searchTweets/SearchTweetsCollection',
+  'views/tweets/TweetsView'
 ],
 
-function($, _, Backbone, homeTemplate, SearchTweetsCollection){
+function($, _, Backbone, homeTemplate, SearchTweetsCollection, TweetsView){
 
   var HomeView = Backbone.View.extend({
     el: $("#page"),
@@ -26,11 +27,14 @@ function($, _, Backbone, homeTemplate, SearchTweetsCollection){
     },
 
     onDataHandler: function(collection) {
-        $.each(collection.models, function(i, tweet) {
-          console.log(tweet);
-        });
-          debugger;
-      },
+      var tweetsView = new TweetsView({collection: collection}).render();
+      $("p#searchSection").remove();
+      $(".input-append").remove();
+      // $.each(collection.models, function(i, tweet) {
+      //   console.log(tweet);
+      // });
+      //   debugger;
+    },
 
     searchTwitter: function() {
         // debugger;

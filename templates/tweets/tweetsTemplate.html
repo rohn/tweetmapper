@@ -1,0 +1,11 @@
+<div class="tweets">
+	<p>Results from search:</p>
+
+	<% _.each(tweets, function(tweet){ %>
+        TEXT OF TWEET:
+        <%= _.escape(tweet.text) %>
+        USER:
+        <%= _.escape(tweet.from_user) %>
+        <br/>
+    <% }); %>
+</div>
