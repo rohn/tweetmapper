@@ -1,11 +1,13 @@
-  define([
+define([
   'jquery',
   'underscore',
   'backbone',
   'models/person/PersonModel',
   'collections/tweets/TweetsCollection',
   'text!templates/map/mapTemplate.html'
-], function($, _, Backbone, PersonModel, TweetsCollection, mapTemplate){
+],
+
+function($, _, Backbone, PersonModel, TweetsCollection, mapTemplate){
 
   var locations = [];
   var map;
