@@ -18,6 +18,14 @@ function($, _, Backbone, UserModel, userTemplate){
       this.getSomeData();
     },
 
+    events: {
+      "click .showthemap" : "showTheMap"
+    },
+
+    showTheMap: function() {
+      this.hideModal();
+    },
+
     getSomeData: function() {
       var that = this;
 
