@@ -3,10 +3,11 @@ define([
   'jquery',
   'underscore',
   'backbone',
+  'handlebars',
   'router', // Request router.js
 ],
 
-function($, _, Backbone, Router){
+function($, _, Backbone, Handlebars, Router){
   var app = {
     root: '/'
   };

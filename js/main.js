@@ -1,9 +1,10 @@
 require([
   'app',
-  'router'
+  'router',
+  'handlebars'
 ],
 
-function(app, Router){
+function(app, Router, Handlebars){
 
   app.router = new Router();
 

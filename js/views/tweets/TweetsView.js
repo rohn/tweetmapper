@@ -2,7 +2,7 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'text!templates/tweets/tweetsTemplate.html'
+  'text!templates/tweets/tweetsTemplate.hbs'
 ],
 
 function($, _, Backbone, tweetsTemplate){
@@ -11,13 +11,14 @@ function($, _, Backbone, tweetsTemplate){
     el: "#searchResults",
 
     initialize: function() {
-      this.render();
+      // this.render();
     },
 
     render: function(){
       var returnedTweets ={"tweets": this.collection.toJSON()};
-      var compiledTemplate = _.template(tweetsTemplate, returnedTweets);
-      this.$el.html(compiledTemplate);
+      var compiledTemplate = Handlebars.compile(tweetsTemplate);
+      // var compiledTemplate = _.template(tweetsTemplate, returnedTweets);
+      this.$el.html(compiledTemplate(returnedTweets));
     }
 
   });

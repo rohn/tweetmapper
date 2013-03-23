@@ -1,0 +1,12 @@
+<div class="tweets">
+	<p>Results from search:</p>
+
+	{{#each tweets}}
+        TEXT OF TWEET:
+        {{text}}
+        USER:
+        <a href="#/map/{{from_user}}">
+        {{from_user}}</a>
+        <br/>
+    {{/each}}
+</div>

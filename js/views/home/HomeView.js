@@ -39,7 +39,8 @@ function($, _, Backbone, homeTemplate, SearchTweetsCollection, TweetsView){
         this.collection.fetch({
             success: that.onDataHandler,
             error: function(errorResponse) {
-                console.log('Failed to fetch!');
+                console.error('Failed to fetch!');
+                alert('There was a problem');
             }
 
         });

@@ -4,13 +4,14 @@ define([
   'jquery',
   'underscore',
   'backbone',
+  'handlebars',
   'views/home/HomeView',
   'views/maps/MapView',
   'models/person/PersonModel',
   'views/footer/FooterView'
 ],
 
-function(app, $, _, Backbone, HomeView, MapView, PersonModel, FooterView) {
+function(app, $, _, Backbone, Handlebars, HomeView, MapView, PersonModel, FooterView) {
 
   var Router = Backbone.Router.extend({
     initialize:function() {
