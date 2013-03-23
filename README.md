@@ -51,6 +51,7 @@ twitter documentation indicates the necessity of using OAUTH to use this API
 Areas for improvement
 ---------------------
 + Handlebars is not being loaded with require.js and is instead loaded in the index.html
++ Handlebars is not being used for all templates
 + Zombies need to be eradicated
 + Would like to fully incorporate bootstrap to make it visibly acceptable
 + thought about adding a hover state to the list of tweets, hovering to give user info
