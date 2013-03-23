@@ -1,13 +1,12 @@
 require([
-  'app',
-  'router',
-  'handlebars'
-],
+	'app',
+	'router',
+	'handlebars'],
 
-function(app, Router, Handlebars){
+function(app, Router, Handlebars) {
 
-  app.router = new Router();
+	app.router = new Router();
 
-  Backbone.history.start();
+	Backbone.history.start();
 
 });

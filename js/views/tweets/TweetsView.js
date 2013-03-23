@@ -3,32 +3,32 @@ define([
   'underscore',
   'backbone',
   'js/views/user/UserView.js',
-  'text!templates/tweets/tweetsTemplate.hbs'
-],
+  'text!templates/tweets/tweetsTemplate.hbs'],
 
-function($, _, Backbone, UserView, tweetsTemplate){
+function($, _, Backbone, UserView, tweetsTemplate) {
 
   var TweetsView = Backbone.View.extend({
     el: "#searchResults",
 
     initialize: function() {
-      // this.render();
     },
 
     events: {
-      "click td" : "userClicked"
+      "click td": "userClicked"
     },
 
-    render: function(){
-      var returnedTweets ={"tweets": this.collection.toJSON()};
+    render: function() {
+      var returnedTweets = {
+        "tweets": this.collection.toJSON()
+      };
       var compiledTemplate = Handlebars.compile(tweetsTemplate);
       this.$el.html(compiledTemplate(returnedTweets));
     },
 
     userClicked: function(ev) {
-      // alert('user clicked' + ev.currentTarget.className);
-      var userView = new UserView({user_name: ev.currentTarget.className});
-      // userView.render();
+      var userView = new UserView({
+        user_name: ev.currentTarget.className
+      });
       userView.showModal({
         showCloseButton: false
       });

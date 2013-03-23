@@ -4,22 +4,23 @@ define([
   'backbone',
   'models/user/UserModel',
   'text!templates/user/userTemplate.hbs',
-  'backboneModalDialog'
-],
+  'backboneModalDialog'],
 
-function($, _, Backbone, UserModel, userTemplate){
+function($, _, Backbone, UserModel, userTemplate) {
 
   var userView = Backbone.ModalView.extend({
 
     initialize: function(options) {
       var that = this;
 
-      this.model = new UserModel({user_name: options.user_name});
+      this.model = new UserModel({
+        user_name: options.user_name
+      });
       this.getSomeData();
     },
 
     events: {
-      "click .showthemap" : "showTheMap"
+      "click .showthemap": "showTheMap"
     },
 
     showTheMap: function() {
@@ -32,18 +33,19 @@ function($, _, Backbone, UserModel, userTemplate){
       this.model.fetch({
         success: that.onDataHandler,
         error: function(errorResponse) {
-            console.error('Failed to fetch!');
-            alert('There was a problem');
+          console.error('Failed to fetch!');
+          alert('There was a problem');
         }
-      }).complete(function() {that.render();});
+      }).complete(function() {
+        that.render();
+      });
     },
 
     onDataHander: function() {
-      // debugger;
       this.render();
     },
 
-    render: function(){
+    render: function() {
       var compiledTemplate = Handlebars.compile(userTemplate);
       this.$el.html(compiledTemplate(this.model.attributes));
     }

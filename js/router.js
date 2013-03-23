@@ -8,14 +8,12 @@ define([
   'views/home/HomeView',
   'views/maps/MapView',
   'models/person/PersonModel',
-  'views/footer/FooterView'
-],
+  'views/footer/FooterView'],
 
 function(app, $, _, Backbone, Handlebars, HomeView, MapView, PersonModel, FooterView) {
 
   var Router = Backbone.Router.extend({
-    initialize:function() {
-    },
+    initialize: function() {},
 
     routes: {
       'map': 'showMap',
@@ -33,8 +31,12 @@ function(app, $, _, Backbone, Handlebars, HomeView, MapView, PersonModel, Footer
     },
 
     showMapUser: function(twitterUser) {
-      var person = new PersonModel({tweeter: twitterUser});
-      var mapView = new MapView({model:person});
+      var person = new PersonModel({
+        tweeter: twitterUser
+      });
+      var mapView = new MapView({
+        model: person
+      });
       mapView.render();
 
       var footerView = new FooterView();
@@ -49,7 +51,7 @@ function(app, $, _, Backbone, Handlebars, HomeView, MapView, PersonModel, Footer
       var homeView = new HomeView();
       // homeView.render();
 
-       // unlike the above, we don't call render on this view
+      // unlike the above, we don't call render on this view
       // as it will handle the render call internally after it
       // loads data
       var footerView = new FooterView();

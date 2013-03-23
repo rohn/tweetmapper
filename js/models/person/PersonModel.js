@@ -1,12 +1,11 @@
 define([
-  'underscore',
-  'backbone',
-], function(_, Backbone) {
+	'underscore',
+	'backbone', ], function(_, Backbone) {
 
-  var PersonModel = Backbone.Model.extend({
+	var PersonModel = Backbone.Model.extend({
 
-  });
+	});
 
-  return PersonModel;
+	return PersonModel;
 
 });

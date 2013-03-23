@@ -4,10 +4,9 @@ define([
   'backbone',
   'models/person/PersonModel',
   'collections/tweets/TweetsCollection',
-  'text!templates/map/mapTemplate.html'
-],
+  'text!templates/map/mapTemplate.html'],
 
-function($, _, Backbone, PersonModel, TweetsCollection, mapTemplate){
+function($, _, Backbone, PersonModel, TweetsCollection, mapTemplate) {
 
   var locations = [];
   var map;
@@ -17,7 +16,7 @@ function($, _, Backbone, PersonModel, TweetsCollection, mapTemplate){
     el: $("#page"),
     model: this.model,
 
-    initialize: function(){
+    initialize: function() {
       var that = this;
 
       var onDataHandler = function(collection) {
@@ -31,33 +30,36 @@ function($, _, Backbone, PersonModel, TweetsCollection, mapTemplate){
         that.rohnFunc();
       };
 
-      this.collection = new TweetsCollection({tweeter:this.model.attributes.tweeter});
+      this.collection = new TweetsCollection({
+        tweeter: this.model.attributes.tweeter
+      });
       this.collection.fetch({
-        success : onDataHandler,
+        success: onDataHandler,
         dataType: "jsonp"
       });
     },
 
-    render: function(){
-      var data = {tweeter: this.model};
-      var compiledTemplate = _.template( mapTemplate, data );
+    render: function() {
+      var data = {
+        tweeter: this.model
+      };
+      var compiledTemplate = _.template(mapTemplate, data);
       this.$el.html(compiledTemplate);
     },
 
 
     rohnFunc: function() {
       if (this.supports_geolocation()) {
-        // this.get_location();
         var marker;
         for (var i = 0, len = locations.length; i < len; i++) {
-            var latlngset = new google.maps.LatLng(locations[i][1], locations[i][2]);
-            var tweetText = locations[i][0];
-            marker = new google.maps.Marker({
-              position: latlngset,
-              title: tweetText,
-              map: map
-            });
-            markerArray.push(marker);
+          var latlngset = new google.maps.LatLng(locations[i][1], locations[i][2]);
+          var tweetText = locations[i][0];
+          marker = new google.maps.Marker({
+            position: latlngset,
+            title: tweetText,
+            map: map
+          });
+          markerArray.push(marker);
         }
         this.get_location();
       }
@@ -70,7 +72,7 @@ function($, _, Backbone, PersonModel, TweetsCollection, mapTemplate){
     },
 
     get_location: function() {
-      if ( this.supports_geolocation() ) {
+      if (this.supports_geolocation()) {
         navigator.geolocation.getCurrentPosition(this.show_map, this.handle_error);
       } else {
         // no native support;
@@ -83,17 +85,19 @@ function($, _, Backbone, PersonModel, TweetsCollection, mapTemplate){
       var longitude = position.coords.longitude;
       // let's show a map or do something interesting!
 
-      $("#geo-wrapper").css({'width':'640px','height':'480px'});
+      $("#geo-wrapper").css({
+        'width': '640px',
+        'height': '480px'
+      });
 
       var latlng = new google.maps.LatLng(latitude, longitude);
       var myOptions = {
-          zoom: 10,
-          center: latlng,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+        zoom: 10,
+        center: latlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
       };
       map = new google.maps.Map(document.getElementById("geo-wrapper"), myOptions);
 
-      // marker.setMap(map);
       for (var i in markerArray) {
         markerArray[i].setMap(map);
       }

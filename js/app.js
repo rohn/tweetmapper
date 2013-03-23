@@ -7,7 +7,7 @@ define([
   'router', // Request router.js
 ],
 
-function($, _, Backbone, Handlebars, Router){
+function($, _, Backbone, Handlebars, Router) {
   var app = {
     root: '/'
   };

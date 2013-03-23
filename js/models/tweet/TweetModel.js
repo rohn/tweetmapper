@@ -1,13 +1,12 @@
 define([
-  'backbone',
-],
+	'backbone', ],
 
 function(Backbone) {
 
-  var TweetModel = Backbone.Model.extend({
+	var TweetModel = Backbone.Model.extend({
 
-  });
+	});
 
-  return TweetModel;
+	return TweetModel;
 
 });
