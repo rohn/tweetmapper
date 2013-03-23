@@ -9,14 +9,15 @@ require.config({
     jquery: 'libs/jquery/jquery-min',
     underscore: 'libs/underscore/underscore-min',
     backbone: 'libs/backbone/backbone-min',
+    backboneModalDialog: 'libs/backbone/Backbone.ModalDialog',
     handlebars: 'libs/handlebars/handlebars',
     templates: '../templates'
   },
 
   shim: {
-	'handlebars': {
-		exports: 'Handlebars'
-	}
+  	'handlebars': {
+  		exports: 'Handlebars'
+  	}
   }
 
 });
