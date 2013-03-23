@@ -3,6 +3,9 @@ Tweet Mapper
 
 playing around with a tweet to google api example
 
+![Start Page](screenshots/Selection_001.png)
+
+
 Format
 ------
 the map of tweets (which have geo data) can be called directly with this url:
