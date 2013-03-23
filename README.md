@@ -37,7 +37,7 @@ A good one to try that I was testing with is InfinityBalloon
 
 Important Notes
 ---------------
-instead of using GET search/tweets (which returns an error) use the following format:
+instead of using GET search/tweets (which returns an error) the following API was used:
 
 > http://search.twitter.com/search.json?q=search%20criteria&rpp=100&include_entities=true&result_type=mixed
 
@@ -46,3 +46,13 @@ the error given by the GET search/tweets API is:
 
 twitter documentation indicates the necessity of using OAUTH to use this API
 > https://dev.twitter.com/docs/api/1.1/get/search/tweets
+
+
+Areas for improvement
+---------------------
++ Handlebars is not being loaded with require.js and is instead loaded in the index.html
++ Zombies need to be eradicated
++ Would like to fully incorporate bootstrap to make it visibly acceptable
++ thought about adding a hover state to the list of tweets, hovering to give user info
++ etc
++ etc
