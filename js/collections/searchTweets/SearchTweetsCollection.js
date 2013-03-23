@@ -18,7 +18,7 @@ define([
       //   return searchURL;
       // },
       url: function(searchQuery) {
-        return 'http://search.twitter.com/search.json?q=' + searchQuery + '&rpp=2&include_entities=false';
+        return 'http://search.twitter.com/search.json?q=' + searchQuery + '&include_entities=false';
       },
 
       parse: function(response) {

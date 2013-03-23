@@ -17,7 +17,6 @@ function($, _, Backbone, tweetsTemplate){
     render: function(){
       var returnedTweets ={"tweets": this.collection.toJSON()};
       var compiledTemplate = Handlebars.compile(tweetsTemplate);
-      // var compiledTemplate = _.template(tweetsTemplate, returnedTweets);
       this.$el.html(compiledTemplate(returnedTweets));
     }
 
