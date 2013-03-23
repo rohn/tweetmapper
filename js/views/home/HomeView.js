@@ -28,12 +28,8 @@ function($, _, Backbone, homeTemplate, SearchTweetsCollection, TweetsView){
 
     onDataHandler: function(collection) {
       var tweetsView = new TweetsView({collection: collection}).render();
-      $("p#searchSection").remove();
-      $(".input-append").remove();
-      // $.each(collection.models, function(i, tweet) {
-      //   console.log(tweet);
-      // });
-      //   debugger;
+      // $("p#searchSection").remove();
+      // $(".input-append").remove();
     },
 
     searchTwitter: function() {
@@ -41,10 +37,6 @@ function($, _, Backbone, homeTemplate, SearchTweetsCollection, TweetsView){
         var that = this;
         this.collection.query = escape(this.$('.searchInfo').val());
         this.collection.fetch({
-            // success: function(response, xhr) {
-            //     console.log(that.collection.toJSON());
-            //     debugger;
-            // },
             success: that.onDataHandler,
             error: function(errorResponse) {
                 console.log('Failed to fetch!');

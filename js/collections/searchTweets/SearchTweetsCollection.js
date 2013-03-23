@@ -17,18 +17,21 @@ define([
       //     + this.searchText + "&rpp=2&include_entities=false";
       //   return searchURL;
       // },
-      url: 'http://search.twitter.com/search.json?q=' + this.query + '&rpp=2&include_entities=false',
+      url: function(searchQuery) {
+        return 'http://search.twitter.com/search.json?q=' + searchQuery + '&rpp=2&include_entities=false';
+      },
 
       parse: function(response) {
         return response.results;
       },
 
       sync: function(method, model, options) {
+        // debugger;
         var that = this;
         var params = _.extend({
             type: 'GET',
             dataType: 'jsonp',
-            url: that.url,
+            url: that.url(model.query),
             processData: false
         }, options);
 

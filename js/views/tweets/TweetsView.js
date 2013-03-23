@@ -12,14 +12,12 @@ function($, _, Backbone, tweetsTemplate){
 
     initialize: function() {
       this.render();
-      debugger;
     },
 
     render: function(){
       var returnedTweets ={"tweets": this.collection.toJSON()};
       var compiledTemplate = _.template(tweetsTemplate, returnedTweets);
       this.$el.html(compiledTemplate);
-      debugger;
     }
 
   });
